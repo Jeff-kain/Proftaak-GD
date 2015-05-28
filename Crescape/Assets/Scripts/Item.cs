@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Item : MonoBehaviour {
 
+    public static Item instance;
+
 	public bool Elastic;
 	public bool Floating; 
 	public bool JumpPower; 
@@ -13,9 +15,13 @@ public class Item : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-	
+
 	}
 	
+    void Awake()
+    {
+        instance = this;
+    }
 	// Update is called once per frame
 	void Update () 
 	{
@@ -36,5 +42,13 @@ public class Item : MonoBehaviour {
 	{
 		I.Elastic = true;
 	}
+
+    public void SetJump(GameObject GO)
+    {
+        if(JumpPower!=false && GO.GetComponent<Rigidbody>()==null)
+        {
+            GO.AddComponent<Rigidbody>();
+        }
+    }
 
 }
