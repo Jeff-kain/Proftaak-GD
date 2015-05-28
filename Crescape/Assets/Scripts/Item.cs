@@ -9,7 +9,7 @@ public class Item : MonoBehaviour {
 	public bool Floating; 
 	public bool JumpPower; 
 	public bool IsPlatform;
-	public bool Proportions;
+	public bool Propulsion;
 	public bool Sticky; 
 
 	// Use this for initialization
@@ -46,6 +46,14 @@ public class Item : MonoBehaviour {
     public void SetJump(GameObject GO)
     {
         if(JumpPower!=false && GO.GetComponent<Rigidbody>()==null)
+        {
+            GO.AddComponent<Rigidbody>();
+        }
+    }
+
+    public void SetPropulsion(GameObject GO)
+    {
+        if (Propulsion != false && GO.GetComponent<Rigidbody>() == null)
         {
             GO.AddComponent<Rigidbody>();
         }

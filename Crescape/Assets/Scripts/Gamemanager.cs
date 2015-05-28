@@ -25,15 +25,31 @@ public class Gamemanager : MonoBehaviour
         {
             JumpPower(Test.GetComponent<Item>());
         }
+        if(Input.GetAxis("Horizontal")!=0)
+        {
+            Propulsion(Test.GetComponent<Item>());
+        }
     }
 
     public void JumpPower(Item I)
     {
-        Test.rigidbody.AddForce(Vector3.up * 100);
+        if (I.JumpPower != false)
+        {
+            I.rigidbody.AddForce(Vector3.up * 400);
+        }
+    }
+
+    public void Propulsion(Item I)
+    {
+        if(I.Propulsion !=false)
+        {
+            I.rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal") * 8, 0, 0)); 
+        }
     }
 
     public void ItemPropertie(GameObject obj)
     {
         Item.instance.SetJump(obj);
+        Item.instance.SetPropulsion(obj);
     }
 }
