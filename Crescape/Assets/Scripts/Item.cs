@@ -30,17 +30,30 @@ public class Item : MonoBehaviour {
 
 	public void SetSticky(Item I)
 	{
-		I.Sticky = true;
+		if (I.Sticky != false)
+		{
+
+		}
+
 	}
 
-	public void SetFloating(Item I)
+	public void SetFloating(GameObject GO)
 	{
-		I.Floating = true;
+		if (Floating != false && GO.GetComponent<Rigidbody> () == null) 
+		{
+			GO.AddComponent<Rigidbody>();		
+		}
+
 	}
 
 	public void SetElastic(Item I)
 	{
-		I.Elastic = true;
+		if (I.Elastic != false)
+		{
+			//Animations?
+		}
+
+
 	}
 
     public void SetJump(GameObject GO)
