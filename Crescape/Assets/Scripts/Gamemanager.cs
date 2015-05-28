@@ -16,6 +16,7 @@ public class Gamemanager : MonoBehaviour
     void Awake()
     {
         instance = this;
+		ItemPropertie (Test);
     }
 
     // Update is called once per frame
@@ -25,15 +26,41 @@ public class Gamemanager : MonoBehaviour
         {
             JumpPower(Test.GetComponent<Item>());
         }
+
+
     }
 
     public void JumpPower(Item I)
     {
-        Test.rigidbody.AddForce(Vector3.up * 100);
+        Test.GetComponent<Rigidbody>().AddForce(Vector3.up * 100);
     }
 
     public void ItemPropertie(GameObject obj)
     {
+
         Item.instance.SetJump(obj);
+
+		if (obj.GetComponent<Item>().Floating == true)
+		{
+			Item.instance.SetFloating(obj);
+			Debug.Log("Object" + obj.name + "is eligible to float");
+
+		}
+
+		if (obj.GetComponent<Item>().Sticky == true)
+		{
+			Item.instance.SetSticky(obj);
+			Debug.Log("Object" + obj.name + " is sticky!");
+		}
+
+		if (obj.GetComponent<Item>().Elastic == true)
+		{
+			Item.instance.SetElastic(obj);
+			Debug.Log("Object" + obj.name + " is elastic!");
+		}
+
+
     }
+
+
 }
