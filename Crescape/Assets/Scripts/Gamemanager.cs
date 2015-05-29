@@ -7,6 +7,7 @@ public class Gamemanager : MonoBehaviour
     public static Gamemanager instance;
     public GameObject Test;
 
+	public GameObject collidingobject; 
 
     // Use this for initialization
     void Start()
@@ -35,7 +36,17 @@ public class Gamemanager : MonoBehaviour
     {
         if (I.JumpPower != false)
         {
-            I.rigidbody.AddForce(Vector3.up * 400);
+			if(I.Sticky == true)
+			{
+				I.Sticky = false;
+				I.GetComponent<Rigidbody>().AddForce(Vector3.up * 400);
+				I.Sticky = true;
+			}	
+			else
+			{
+				I.GetComponent<Rigidbody>().AddForce(Vector3.up * 400);
+
+			}	
         }
     }
 
@@ -43,13 +54,39 @@ public class Gamemanager : MonoBehaviour
     {
         if(I.Propulsion !=false)
         {
-            I.rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal") * 8, 0, 0)); 
+            I.GetComponent<Rigidbody>().AddForce(new Vector3(Input.GetAxis("Horizontal") * 8, 0, 0)); 
         }
     }
+
+
 
     public void ItemPropertie(GameObject obj)
     {
         Item.instance.SetJump(obj);
         Item.instance.SetPropulsion(obj);
+
+		if (obj.GetComponent<Item>().Floating == true)
+		{
+			Item.instance.SetFloating(obj);
+			Debug.Log("Object" + obj.name + "is eligible to float");
+			
+		}
+		
+		if (obj.GetComponent<Item>().Sticky == true)
+		{
+			Item.instance.SetSticky(obj);
+			Debug.Log("Object" + obj.name + " is sticky!");
+			MakeSticky();
+		}
+		
+		if (obj.GetComponent<Item>().Elastic == true)
+		{
+			Item.instance.SetElastic(obj);
+			Debug.Log("Object" + obj.name + " is elastic!");
+		}
+
     }
+
+
+
 }

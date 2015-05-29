@@ -28,11 +28,11 @@ public class Item : MonoBehaviour {
 	
 	}
 
-	public void SetSticky(Item I)
+	public void SetSticky(GameObject GO)
 	{
-		if (I.Sticky != false)
+		if (Sticky != false && GO.GetComponent<Rigidbody> () == null)
 		{
-
+			GO.AddComponent<Rigidbody>();
 		}
 
 	}
@@ -46,11 +46,11 @@ public class Item : MonoBehaviour {
 
 	}
 
-	public void SetElastic(Item I)
+	public void SetElastic(GameObject GO)
 	{
-		if (I.Elastic != false)
+		if (Elastic != false && GO.GetComponent<Rigidbody> () == null)
 		{
-			//Animations?
+			GO.AddComponent<Rigidbody>();
 		}
 
 
