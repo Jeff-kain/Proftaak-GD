@@ -25,7 +25,7 @@ public class Item : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
+
 	}
 
 	public void SetSticky(GameObject GO)
@@ -71,5 +71,29 @@ public class Item : MonoBehaviour {
             GO.AddComponent<Rigidbody>();
         }
     }
+
+	private void OnCollisionEnter(Collision c)
+	{
+		if (Sticky == true) {
+			if (c.collider.gameObject.layer != LayerMask.NameToLayer("Ground")) {
+				c.transform.parent = gameObject.transform;
+			}
+		}
+
+	}
+
+	private void OnCollisionExit(Collision c)
+	{
+		
+		if (transform.parent != null)
+		{
+			Debug.Log("Object" + name + "has a parent!");
+			if (Vector3.Distance (c.transform.position, transform.position) > 0f) {
+				transform.parent = null;
+			}
+		}
+		
+
+	}
 
 }

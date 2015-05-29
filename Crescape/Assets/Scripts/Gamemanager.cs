@@ -36,17 +36,9 @@ public class Gamemanager : MonoBehaviour
     {
         if (I.JumpPower != false)
         {
-			if(I.Sticky == true)
-			{
-				I.Sticky = false;
-				I.GetComponent<Rigidbody>().AddForce(Vector3.up * 400);
-				I.Sticky = true;
-			}	
-			else
-			{
+
 				I.GetComponent<Rigidbody>().AddForce(Vector3.up * 400);
 
-			}	
         }
     }
 
@@ -76,7 +68,7 @@ public class Gamemanager : MonoBehaviour
 		{
 			Item.instance.SetSticky(obj);
 			Debug.Log("Object" + obj.name + " is sticky!");
-			MakeSticky();
+		
 		}
 		
 		if (obj.GetComponent<Item>().Elastic == true)
@@ -84,6 +76,8 @@ public class Gamemanager : MonoBehaviour
 			Item.instance.SetElastic(obj);
 			Debug.Log("Object" + obj.name + " is elastic!");
 		}
+
+
 
     }
 
