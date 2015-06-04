@@ -1,0 +1,11 @@
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\obj\Debug\UnityVS.Jeff_Deel.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\obj\Debug\Assembly-CSharp.dll
+C:\Users\jeffrey\Documents\FHICT\P8\GDT\Jeff_Deel\obj\Debug\Assembly-CSharp.pdb
