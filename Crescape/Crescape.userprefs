@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gamemanager.cs">
     <Files>
-      <File FileName="Crescape.sln" Line="41" Column="1" />
-      <File FileName="Assets\Scripts\Gamemanager.cs" Line="156" Column="12" />
+      <File FileName="Crescape.sln" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gamemanager.cs" Line="42" Column="6" />
       <File FileName="Assets\Scripts\Item.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
