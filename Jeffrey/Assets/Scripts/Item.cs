@@ -81,6 +81,27 @@ public class Item : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.layer == 9)
+        {
+            col.transform.parent = GameObject.Find("Combined Object").transform;
+            if (col.gameObject.GetComponent<Rigidbody>() != null)
+            {
+                if (IsPlatform != true)
+                {
+                    col.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    col.gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+                    Physics.IgnoreLayerCollision(8, 8, true);
+                }
+                if (IsPlatform != false)
+                {
+                    col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    col.gameObject.GetComponent<Rigidbody>().detectCollisions = true;
+                }
+            }
+        }
+    }
 
 	
 

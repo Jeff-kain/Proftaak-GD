@@ -46,6 +46,10 @@ public class Gamemanager : MonoBehaviour
         {
             Propulsion(GameObject.Find("Combined Object").GetComponent<Item>());
         }
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            Propulsion(GameObject.Find("Combined Object").GetComponent<Item>());
+        }
 	
 		foreach (GameObject GO in Combination)
 		{
@@ -86,7 +90,14 @@ public class Gamemanager : MonoBehaviour
     {
         if (I.Propulsion != false)
         {
-            I.GetComponent<Rigidbody>().AddForce(new Vector3(Input.GetAxis("Horizontal") * 8, 0, 0));
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                I.GetComponent<Rigidbody>().AddForce(new Vector3(Input.GetAxis("Horizontal") * 6, 0, 0));
+            }
+            if (Input.GetAxis("Vertical") != 0)
+            {
+                I.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, Input.GetAxis("Vertical") * 6));
+            }
         }
     }
 
